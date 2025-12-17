@@ -1,0 +1,5 @@
+# Remove '.db' files
+/src/Database/*.db
+# Keep the .gitkeep file (to preserve directory structure)
+!/src/Database/.gitkeep
+vendor/

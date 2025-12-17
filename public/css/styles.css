@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(166, 154, 206);
+}
+
+.container {
+    max-width: 100%;
+    display: table;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+form:not(.delete-btn) {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    color: #ff0000;
+    font-size: 0.9em;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover:not([type="reset"], #cancel-btn) {
+    background-color: #0056b3;
+}
+
+button[type="reset"] {
+    background-color: #cdcdcd;
+    color: black;
+}
+
+button#cancel-btn {
+    background-color: #ff0000;
+}
+
+button#cancel-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Ensure .tbl-actions content (Edit link and Delete button) are inline and spaced nicely */
+.tbl-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75em;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.tbl-actions a,
+.tbl-actions .delete-form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.tbl-actions .delete-form {
+    display: inline;
+}
+
+.tbl-actions .delete-btn {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    min-height: 0;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: middle;
+    background: none;
+    border: none;
+    font: inherit;
+    color: #dc3545;
+    text-decoration: underline;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+}
+
+.tbl-actions .delete-btn:hover,
+.tbl-actions .delete-btn:focus {
+    color: #c82333;
+    text-decoration: underline;
+}
+
+.tbl-actions a {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    font: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tbl-actions a:hover,
+.tbl-actions a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
