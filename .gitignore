@@ -1,5 +1,29 @@
-# Remove '.db' files
+# Database files
 /src/Database/*.db
 # Keep the .gitkeep file (to preserve directory structure)
 !/src/Database/.gitkeep
+
+# Dependencies
 vendor/
+
+# Debug files
+/public/debug.php
+/public/info.php
+/public/test.php
+/seed-data.php
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files should be committed:
+# - Dockerfile
+# - docker-compose.yml
+# - default.conf
