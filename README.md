@@ -36,17 +36,12 @@ A simple PHP MVC application for managing records with loan-to-value calculation
    php migrate.php run
    ```
 
-4. **Seed sample data (optional):**
+4. **Start the development server:**
    ```powershell
-   php seed-data.php
-If using Docker, the application uses the following setup:
-
-- **Dockerfile**: Custom PHP Apache image with SQLite support
-- **docker-compose.yml**: Service configuration mapping port 8080 to container port 80
-- **ve.ps1
+   .\serve.ps1
    ```
 
-6. **Access the application:**
+5. **Access the application:**
    - Open your browser to http://localhost:8080
 
 ### Option 2: Using Docker
@@ -63,21 +58,16 @@ If using Docker, the application uses the following setup:
    docker compose exec web php migrate.php run
    ```
 
-4. **Seed sample data (optional):**
-   ```powershell
-   docker compose exec web php seed-data.php
-   ```
-
-5. **Access the application:**
+4. **Access the application:**
    - Open your browser to http://localhost:8080
 
 ## Docker Configuration (Optional)
 
-The application uses the following Docker setup:
+If using Docker, the application uses the following setup:
 
 - **Dockerfile**: Custom PHP Apache image with SQLite support
 - **docker-compose.yml**: Service configuration mapping port 8080 to container port 80
-- **000-default.conf**: Apache virtual host configuration for the `/public` directory
+- **default.conf**: Apache virtual host configuration for the `/public` directory
 
 ## Project Structure
 
