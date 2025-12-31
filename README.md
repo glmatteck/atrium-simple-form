@@ -12,10 +12,44 @@ A simple PHP MVC application for managing records with loan-to-value calculation
 
 ## Prerequisites
 
+**Option 1: Built-in PHP Server (Recommended for Development)**
+- PHP 8.0+ with PDO SQLite extension
+- PowerShell (Windows)
+
+**Option 2: Docker**
 - Docker Desktop
 - Docker Compose
 
 ## Setup
+
+### Option 1: Using Built-in PHP Server
+
+1. **Clone the repository** (or navigate to the project directory)
+
+2. **Install dependencies (if not already installed):**
+   ```powershell
+   composer install
+   ```
+
+3. **Run database migrations:**
+   ```powershell
+   php migrate.php run
+   ```
+
+4. **Seed sample data (optional):**
+   ```powershell
+   php seed-data.php
+If using Docker, the application uses the following setup:
+
+- **Dockerfile**: Custom PHP Apache image with SQLite support
+- **docker-compose.yml**: Service configuration mapping port 8080 to container port 80
+- **ve.ps1
+   ```
+
+6. **Access the application:**
+   - Open your browser to http://localhost:8080
+
+### Option 2: Using Docker
 
 1. **Clone the repository** (or navigate to the project directory)
 
@@ -37,7 +71,7 @@ A simple PHP MVC application for managing records with loan-to-value calculation
 5. **Access the application:**
    - Open your browser to http://localhost:8080
 
-## Docker Configuration
+## Docker Configuration (Optional)
 
 The application uses the following Docker setup:
 
@@ -65,7 +99,30 @@ The application uses the following Docker setup:
 
 ## Available Commands
 
-### Docker Management
+### Development Server (Built-in PHP)
+```powershell
+# Start server
+.\serve.ps1
+
+# Server runs on http://localhost:8080
+```
+
+### Database Management (Local PHP)
+```powershell
+# Run migrations
+php migrate.php run
+
+# Seed sample data
+php seed-data.php
+
+# Rollback migrations
+php migrate.php rollback
+ (Docker)
+# Check migration status
+php migrate.php status
+```
+
+### Docker Management (Optional)
 ```powershell
 # Start containers
 docker compose up -d
@@ -77,11 +134,27 @@ docker compose down
 docker compose up -d --build
 
 # View logs
-docker compose logs web
-
-# Access container shell
-docker compose exec web bash
+docker`public/` directory is the web root
+- Database file is located at `src/Database/data.db`
+- Both built-in PHP server and Docker are supported
+- Docker uses Apache with PHP 8.5 and SQLite
+- For Docker: The `www-data` user needs write permissions on the database directory (handled automatically
 ```
+
+### Using Built-in PHP Server
+
+**If records don't load:**
+1. Ensure migrations have been run: `php migrate.php run`
+2. Check database file exists: `ls src/Database/data.db`
+3. Seed sample data: `php seed-data.php`
+4. Verify PDO SQLite extension is installed: `php -m | Select-String pdo_sqlite`
+
+**If server won't start:**
+1. Check if port 8080 is already in use
+2. Ensure PHP is installed and in your PATH: `php --version`
+3. Try running directly: `php -S localhost:8080 -t public/`
+
+### Using Docker
 
 ### Database Management
 ```powershell
